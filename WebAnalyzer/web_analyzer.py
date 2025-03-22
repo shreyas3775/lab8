@@ -9,7 +9,7 @@ def keyword_display(soup):
 
 def word_freuqency(soup):
     #Search and split
-    split_list = soup.split(" ")
+    split_list = soup.split()
     dict_count = {}
 
     for word in split_list:
@@ -31,7 +31,7 @@ def count_p(p):
     max_num = 0
     max_paragraph = ''
     for paragraph in p:
-        list_words = paragraph.get_text().split(" ")
+        list_words = paragraph.get_text().split()
         if len(list_words) < 5:
             break
         if len(list_words) > max_num:
@@ -65,7 +65,6 @@ try:
 
 
     p = soup.find_all("p")
-    print(p)
     num_p = len(p)
     print("The number of p tags is: ", num_p)
 
